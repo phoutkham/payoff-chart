@@ -25,7 +25,23 @@ A lightweight and interactive JavaScript library to visualize option payoff diag
 Or via CDN:
 
 ```html
-<script src="https://unpkg.com/option-payoff-chart"></script>
+<script src="https://cdn.jsdelivr.net/npm/payoff-chart@1.0.1/dist/payoff-chart.js"></script>
+
+<script>
+  
+  const payoffchart = new Payoffchart('payoff-chart', { width: 400, height: 300 });
+
+</script>
+```
+es6 module
+```html
+<script type="module">
+  
+  import Payoffchart from "https://cdn.jsdelivr.net/npm/payoff-chart@1.0.1/dist/payoff-chart.esm.js";
+
+  const payoffchart = new Payoffchart('payoff-chart', { width: 400, height: 300 });
+  
+</script>
 ```
 
 ### installation for React-App
