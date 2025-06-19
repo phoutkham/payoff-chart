@@ -4,6 +4,10 @@ A lightweight and interactive JavaScript library to visualize option payoff diag
 
 <img src="docs/chart.png" width="300">
 
+[Demo Light Version](https://phoutkham.github.io/payoff-chart/example_light.html)
+
+[Demo Dark Version](https://phoutkham.github.io/payoff-chart/example_dark.html)
+
 ### 🚀 Features
 
 * ⚡ Based on TradingView’s ultra-fast Lightweight Charts
