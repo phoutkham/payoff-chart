@@ -105,7 +105,7 @@ payoffchart.addVertLine({
 });
 ```
 
-adding or removing the vertical line.
+To adding or removing the vertical line.
 
 ```js
 /* adding the vertical line */
