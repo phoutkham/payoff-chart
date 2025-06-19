@@ -1,0 +1,41 @@
+{
+  "name": "payoff-chart",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "payoff-chart",
+    "payoff chart",
+    "payoff",
+    "option-chart",
+    "option chart",
+    "optionchart",
+    "option payoff",
+    "option-payoff",
+    "option-payoff-chart",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.5",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "livereload": "^0.9.3",
+    "rollup": "^4.43.0"
+  },
+  "dependencies": {
+    "lightweight-charts": "^5.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoutkham/payoff-chart"
+  },
+  "description": "A lightweight and interactive JavaScript library to visualize option payoff diagrams based on TradingView's powerful Lightweight Charts. Perfect for traders, educators, and developers building financial tools or option strategy visualizations."
+}
