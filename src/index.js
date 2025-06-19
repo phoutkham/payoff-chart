@@ -22,6 +22,7 @@ const defaultOptions = {
 export default class Payoffchart {
   constructor(elementId, chartOptions) {
     this.chartContainer = document.getElementById(elementId);
+    this.chartContainer.innerHTML = '';
     this.chartContainer.style.position = 'relative';
 
     const options = {...defaultOptions, ...chartOptions};
