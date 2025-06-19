@@ -92,9 +92,9 @@ export default class Payoffchart {
     this.chart.timeScale().fitContent();
   }
 
-  addVertLine({strikePrice, value, options}) {
+  addVertLine({strike, value, options}) {
 
-    const vertLine = new VertLine(this.chart, this.expiryPriceLine, strikePrice, value, options);
+    const vertLine = new VertLine(this.chart, this.expiryPriceLine, strike, value, options);
 
     this.expiryPriceLine.attachPrimitive(vertLine);
 

@@ -20,7 +20,7 @@
 </script>
 <script type="module">
 
-  import Payoffchart from "./payoff-chart.esm.js";
+  import Payoffchart from "https://cdn.jsdelivr.net/npm/payoff-chart@1.0.5/dist/payoff-chart.esm.js";
 
   const payoffchart = new Payoffchart('chart', {
     width: 400,
@@ -41,7 +41,7 @@
   payoffchart.setTodayPriceLine(dummy_data.todayPrice);
 
   payoffchart.addVertLine({
-    strikePrice: 107300,
+    strike: 107300,
     value: 3200,
     options: {
       labelText: 'Break Event',
@@ -51,7 +51,7 @@
   });
 
   payoffchart.addVertLine({
-    strikePrice: 105500,
+    strike: 105500,
     value: 3200,
     options: {
       labelText: 'Asset Price',

@@ -25,7 +25,7 @@ A lightweight and interactive JavaScript library to visualize option payoff diag
 Or via CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/payoff-chart@1.0.1/dist/payoff-chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/payoff-chart@1.0.5/dist/payoff-chart.js"></script>
 
 <script>
   
@@ -37,7 +37,7 @@ es6 module
 ```html
 <script type="module">
   
-  import Payoffchart from "https://cdn.jsdelivr.net/npm/payoff-chart@1.0.1/dist/payoff-chart.esm.js";
+  import Payoffchart from "https://cdn.jsdelivr.net/npm/payoff-chart@1.0.5/dist/payoff-chart.esm.js";
 
   const payoffchart = new Payoffchart('payoff-chart', { width: 400, height: 300 });
   
@@ -95,7 +95,7 @@ payoffchart.setTodayPriceLine([
 
 /* adding the vertical line */
 payoffchart.addVertLine({
-  strikePrice: 110,
+  strike: 110,
   value: 1,
   options: {
     labelText: 'Break Event',
@@ -110,7 +110,7 @@ To adding or removing the vertical line.
 ```js
 /* adding the vertical line */
 const breakEventLine = payoffchart.addVertLine({
-  strikePrice: 110,
+  strike: 110,
   value: 1,
   options: {
     labelText: 'Break Event',
