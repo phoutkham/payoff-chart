@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>payoff-chart Example</title>
+  <style>
+      .payoff-tooltip {
+          background-color: #000 !important;
+          color: #fff !important;
+          width: 140px !important;
+      }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Chart Example</h1>
+<div id="chart"></div>
+<script>
+  const dummy_data = {"expiryPrice":[{"strike":100000,"value":-2280},{"strike":100100,"value":-2280},{"strike":100200,"value":-2280},{"strike":100300,"value":-2280},{"strike":100400,"value":-2280},{"strike":100500,"value":-2280},{"strike":100600,"value":-2280},{"strike":100700,"value":-2280},{"strike":100800,"value":-2280},{"strike":100900,"value":-2280},{"strike":101000,"value":-2280},{"strike":101100,"value":-2280},{"strike":101200,"value":-2280},{"strike":101300,"value":-2280},{"strike":101400,"value":-2280},{"strike":101500,"value":-2280},{"strike":101600,"value":-2280},{"strike":101700,"value":-2280},{"strike":101800,"value":-2280},{"strike":101900,"value":-2280},{"strike":102000,"value":-2280},{"strike":102100,"value":-2280},{"strike":102200,"value":-2280},{"strike":102300,"value":-2280},{"strike":102400,"value":-2280},{"strike":102500,"value":-2280},{"strike":102600,"value":-2280},{"strike":102700,"value":-2280},{"strike":102800,"value":-2280},{"strike":102900,"value":-2280},{"strike":103000,"value":-2280},{"strike":103100,"value":-2280},{"strike":103200,"value":-2280},{"strike":103300,"value":-2280},{"strike":103400,"value":-2280},{"strike":103500,"value":-2280},{"strike":103600,"value":-2280},{"strike":103700,"value":-2280},{"strike":103800,"value":-2280},{"strike":103900,"value":-2280},{"strike":104000,"value":-2280},{"strike":104100,"value":-2280},{"strike":104200,"value":-2280},{"strike":104300,"value":-2280},{"strike":104400,"value":-2280},{"strike":104500,"value":-2280},{"strike":104600,"value":-2280},{"strike":104700,"value":-2280},{"strike":104800,"value":-2280},{"strike":104900,"value":-2280},{"strike":105000,"value":-2280},{"strike":105100,"value":-2180},{"strike":105200,"value":-2080},{"strike":105300,"value":-1980},{"strike":105400,"value":-1880},{"strike":105500,"value":-1780},{"strike":105600,"value":-1680},{"strike":105700,"value":-1580},{"strike":105800,"value":-1480},{"strike":105900,"value":-1380},{"strike":106000,"value":-1280},{"strike":106100,"value":-1180},{"strike":106200,"value":-1080},{"strike":106300,"value":-980},{"strike":106400,"value":-880},{"strike":106500,"value":-780},{"strike":106600,"value":-680},{"strike":106700,"value":-580},{"strike":106800,"value":-480},{"strike":106900,"value":-380},{"strike":107000,"value":-280},{"strike":107100,"value":-180},{"strike":107200,"value":-80},{"strike":107300,"value":20},{"strike":107400,"value":120},{"strike":107500,"value":220},{"strike":107600,"value":320},{"strike":107700,"value":420},{"strike":107800,"value":520},{"strike":107900,"value":620},{"strike":108000,"value":720},{"strike":108100,"value":820},{"strike":108200,"value":920},{"strike":108300,"value":1020},{"strike":108400,"value":1120},{"strike":108500,"value":1220},{"strike":108600,"value":1320},{"strike":108700,"value":1420},{"strike":108800,"value":1520},{"strike":108900,"value":1620},{"strike":109000,"value":1720},{"strike":109100,"value":1820},{"strike":109200,"value":1920},{"strike":109300,"value":2020},{"strike":109400,"value":2120},{"strike":109500,"value":2220},{"strike":109600,"value":2320},{"strike":109700,"value":2420},{"strike":109800,"value":2520},{"strike":109900,"value":2620},{"strike":110000,"value":2720},{"strike":110100,"value":2720},{"strike":110200,"value":2720},{"strike":110300,"value":2720},{"strike":110400,"value":2720},{"strike":110500,"value":2720},{"strike":110600,"value":2720},{"strike":110700,"value":2720},{"strike":110800,"value":2720},{"strike":110900,"value":2720},{"strike":111000,"value":2720},{"strike":111100,"value":2720},{"strike":111200,"value":2720},{"strike":111300,"value":2720},{"strike":111400,"value":2720},{"strike":111500,"value":2720},{"strike":111600,"value":2720},{"strike":111700,"value":2720},{"strike":111800,"value":2720},{"strike":111900,"value":2720},{"strike":112000,"value":2720},{"strike":112100,"value":2720},{"strike":112200,"value":2720},{"strike":112300,"value":2720},{"strike":112400,"value":2720},{"strike":112500,"value":2720},{"strike":112600,"value":2720},{"strike":112700,"value":2720},{"strike":112800,"value":2720},{"strike":112900,"value":2720},{"strike":113000,"value":2720},{"strike":113100,"value":2720},{"strike":113200,"value":2720},{"strike":113300,"value":2720},{"strike":113400,"value":2720},{"strike":113500,"value":2720},{"strike":113600,"value":2720},{"strike":113700,"value":2720},{"strike":113800,"value":2720},{"strike":113900,"value":2720},{"strike":114000,"value":2720},{"strike":114100,"value":2720},{"strike":114200,"value":2720},{"strike":114300,"value":2720},{"strike":114400,"value":2720},{"strike":114500,"value":2720},{"strike":114600,"value":2720},{"strike":114700,"value":2720},{"strike":114800,"value":2720},{"strike":114900,"value":2720}],"todayPrice":[{"strike":100000,"value":-2141.7808582347166},{"strike":100100,"value":-2133.110632147818},{"strike":100200,"value":-2124.0049376836378},{"strike":100300,"value":-2114.44919946232},{"strike":100400,"value":-2104.428797181531},{"strike":100500,"value":-2093.9290937739356},{"strike":100600,"value":-2082.935464766114},{"strike":100700,"value":-2071.4333287852896},{"strike":100800,"value":-2059.4081791536187},{"strike":100900,"value":-2046.8456165037946},{"strike":101000,"value":-2033.73138234195},{"strike":101100,"value":-2020.0513934786309},{"strike":101200,"value":-2005.791777241729},{"strike":101300,"value":-1990.938907378897},{"strike":101400,"value":-1975.4794405514672},{"strike":101500,"value":-1959.4003533164387},{"strike":101600,"value":-1942.688979486813},{"strike":101700,"value":-1925.333047756476},{"strike":101800,"value":-1907.320719470527},{"strike":101900,"value":-1888.6406264178995},{"strike":102000,"value":-1869.2819085188094},{"strike":102100,"value":-1849.2342512764108},{"strike":102200,"value":-1828.4879228590107},{"strike":102300,"value":-1807.0338106762697},{"strike":102400,"value":-1784.8634573108698},{"strike":102500,"value":-1761.9690956658224},{"strike":102600,"value":-1738.3436831863037},{"strike":102700,"value":-1713.9809350143523},{"strike":102800,"value":-1688.8753559351153},{"strike":102900,"value":-1663.022270973454},{"strike":103000,"value":-1636.417854501732},{"strike":103100,"value":-1609.0591577201985},{"strike":103200,"value":-1580.9441343749854},{"strike":103300,"value":-1552.0716645802813},{"strike":103400,"value":-1522.4415766159},{"strike":103500,"value":-1492.0546665741913},{"strike":103600,"value":-1460.912715735727},{"strike":103700,"value":-1429.018505557544},{"strike":103800,"value":-1396.3758301632615},{"strike":103900,"value":-1362.989506230425},{"strike":104000,"value":-1328.8653801762239},{"strike":104100,"value":-1294.0103325505597},{"strike":104200,"value":-1258.4322795513363},{"strike":104300,"value":-1222.1401715839947},{"strike":104400,"value":-1185.143988797503},{"strike":104500,"value":-1147.4547335331536},{"strike":104600,"value":-1109.0844196340568},{"strike":104700,"value":-1070.0460585696273},{"strike":104800,"value":-1030.3536423388014},{"strike":104900,"value":-990.0220525596997},{"strike":105000,"value":-949.072651632534},{"strike":105100,"value":-907.5236752008932},{"strike":105200,"value":-865.38732277915},{"strike":105300,"value":-822.682884691465},{"strike":105400,"value":-779.430621963038},{"strike":105500,"value":-735.6516210251139},{"strike":105600,"value":-691.367768043041},{"strike":105700,"value":-646.6017203537667},{"strike":105800,"value":-601.3768751588104},{"strike":105900,"value":-555.717335626181},{"strike":106000,"value":-509.6478745566292},{"strike":106100,"value":-463.19389577728},{"strike":106200,"value":-416.3813934266618},{"strike":106300,"value":-369.2369092996414},{"strike":106400,"value":-321.78748842571076},{"strike":106500,"value":-274.0606330531191},{"strike":106600,"value":-226.08425521772733},{"strike":106700,"value":-177.8866280738148},{"strike":106800,"value":-129.49633616771825},{"strike":106900,"value":-80.94222483435806},{"strike":107000,"value":-32.25334889837177},{"strike":107100,"value":16.541079139555222},{"strike":107200,"value":65.41174125119142},{"strike":107300,"value":114.32926618478086},{"strike":107400,"value":163.2642817475753},{"strike":107500,"value":212.1874668915334},{"strike":107600,"value":261.0696034306784},{"strike":107700,"value":309.88162721991466},{"strike":107800,"value":358.59467863042664},{"strike":107900,"value":407.1801521602174},{"strike":108000,"value":455.6097450225643},{"strike":108100,"value":503.8555045607209},{"strike":108200,"value":551.8898743415484},{"strike":108300,"value":599.6857387874552},{"strike":108400,"value":647.2164662111172},{"strike":108500,"value":694.4559501243057},{"strike":108600,"value":741.3786486980025},{"strike":108700,"value":787.9596222583568},{"strike":108800,"value":834.1745687099392},{"strike":108900,"value":879.9998567843068},{"strike":109000,"value":925.4125570196484},{"strike":109100,"value":970.3904703848821},{"strike":109200,"value":1014.9121544686786},{"strike":109300,"value":1058.956947160863},{"strike":109400,"value":1102.5049877629717},{"strike":109500,"value":1145.5372354694628},{"strike":109600,"value":1188.0354851717057},{"strike":109700,"value":1229.9823805413398},{"strike":109800,"value":1271.3614243592601},{"strike":109900,"value":1312.1569593701279},{"strike":110000,"value":1352.359819010082},{"strike":110100,"value":1391.9571580568445},{"strike":110200,"value":1430.930629864837},{"strike":110300,"value":1469.2687692407053},{"strike":110400,"value":1506.9611339431867},{"strike":110500,"value":1543.9981811863254},{"strike":110600,"value":1580.3712699720054},{"strike":110700,"value":1616.072660852631},{"strike":110800,"value":1651.0955132268355},{"strike":110900,"value":1685.4338802731363},{"strike":111000,"value":1719.0827016291587},{"strike":111100,"value":1752.037793927564},{"strike":111200,"value":1784.295839298633},{"strike":111300,"value":1815.8543719541485},{"strike":111400,"value":1846.711762966297},{"strike":111500,"value":1876.8672033561888},{"strike":111600,"value":1906.3206856090255},{"strike":111700,"value":1935.0729837297113},{"strike":111800,"value":1963.125631955685},{"strike":111900,"value":1990.480902240888},{"strike":112000,"value":2017.141780625665},{"strike":112100,"value":2043.1119426043588},{"strike":112200,"value":2068.395727602794},{"strike":112300,"value":2092.9981126741623},{"strike":112400,"value":2116.924685521808},{"strike":112500,"value":2140.181616952861},{"strike":112600,"value":2162.775632866018},{"strike":112700,"value":2184.7139858728915},{"strike":112800,"value":2206.004426649597},{"strike":112900,"value":2226.655175112319},{"strike":113000,"value":2246.674891506569},{"strike":113100,"value":2266.0726474972616},{"strike":113200,"value":2284.857897341717},{"strike":113300,"value":2303.040449225562},{"strike":113400,"value":2320.6304368359997},{"strike":113500,"value":2337.638291243624},{"strike":113600,"value":2354.0747131603566},{"strike":113700,"value":2369.9506456355884},{"strike":113800,"value":2385.2772472500073},{"strike":113900,"value":2400.065865861063},{"strike":114000,"value":2414.3280129508203},{"strike":114100,"value":2428.075338621973},{"strike":114200,"value":2441.3196072842256},{"strike":114300,"value":2454.072674068797},{"strike":114400,"value":2466.3464620049926},{"strike":114500,"value":2478.1529399879364},{"strike":114600,"value":2489.5041015647876},{"strike":114700,"value":2500.4119445594115},{"strike":114800,"value":2510.8884515560203},{"strike":114900,"value":2520.945571254575}]};
+</script>
+<script type="module">
+
+  import Payoffchart from "../dist/payoff-chart.esm.js";
+
+  const payoffchart = new Payoffchart('chart', {
+    width: 400,
+    height: 300,
+    layout: {
+      background: { color: "#000" },
+      textColor: "#fff",
+      fontSize: 12,
+      //fontFamily: 'your font here'
+    },
+    grid: {
+      vertLines: { color: "#555" },
+      horzLines: { color: "#555" },
+    },
+  });
+
+  payoffchart.setExpiryPriceLine(dummy_data.expiryPrice);
+  payoffchart.setTodayPriceLine(dummy_data.todayPrice);
+
+  payoffchart.addVertLine({
+    strikePrice: 107300,
+    value: 3200,
+    options: {
+      labelText: 'Break Event',
+      color: '#777',
+      labelTextColor: '#777'
+    }
+  });
+
+  payoffchart.addVertLine({
+    strikePrice: 105500,
+    value: 3200,
+    options: {
+      labelText: 'Asset Price',
+      color: 'rgba( 239, 83, 80, 1)',
+      left: true,
+      labelTextColor: '#fff',
+      labelBackgroundColor: 'rgba( 239, 83, 80, 1)'
+    }
+  });
+
+</script>
+</body>
+</html>
