@@ -2,8 +2,6 @@
 
 A lightweight and interactive JavaScript library to visualize option payoff diagrams based on TradingView's powerful Lightweight Charts. Perfect for traders, educators, and developers building financial tools or option strategy visualizations.
 
-<img src="docs/chart.png" width="300">
-
 [Demo Light Version](https://phoutkham.github.io/payoff-chart/example_light.html)
 
 [Demo Dark Version](https://phoutkham.github.io/payoff-chart/example_dark.html)
